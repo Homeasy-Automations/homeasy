@@ -14,8 +14,12 @@ import {
   CirclePlay,
   Globe,
   Share2,
-  Facebook
+  Facebook,
+  Leaf,
+  Sun,
+  Lock,
 } from "lucide-react";
+import Header from "@/components/header";
 
 const products = [
   {
@@ -47,48 +51,13 @@ const products = [
 export default function page() {
   return (
     <section className="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display antialiased transition-colors duration-200">
-      <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e5e7eb] dark:border-[#243b47] bg-surface-light/90 dark:bg-[#111c22]/90 backdrop-blur-md px-6 py-3 lg:px-10">
-        <div className="flex items-center gap-4 text-text-light dark:text-white">
-          <div className="size-8 text-primary flex items-center justify-center">
-            <HouseWifi className="material-symbols-outlined text-3xl" />
-          </div>
-          <h2 className="text-xl font-bold leading-tight tracking-[-0.015em]">
-            Homeasy
-          </h2>
-        </div>
+      
+      <Header/>
 
-        <div className="flex flex-1 justify-end gap-8">
-          <nav className="hidden md:flex items-center gap-9">
-            <a
-              className="text-sm font-medium hover:text-primary transition-colors"
-              href="#products"
-            >
-              Products
-            </a>
-            <a
-              className="text-sm font-medium hover:text-primary transition-colors"
-              href="#features"
-            >
-              Features
-            </a>
-            <a
-              className="text-sm font-medium hover:text-primary transition-colors"
-              href="#testimonials"
-            >
-              Testimonials
-            </a>
-          </nav>
-
-          <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold shadow-lg shadow-primary/20">
-            <span className="truncate">My Account</span>
-          </button>
-        </div>
-      </header>
-
-      <main className="flex-grow">
+      <main className="grow">
         {/* Hero Section */}
         <section className="relative px-4 py-8 md:px-10 md:py-12 lg:px-40 flex justify-center">
-          <div className="w-full max-w-[1280px]">
+          <div className="w-full max-w-7xl">
             <div className="@container">
               <div
                 className="flex min-h-[560px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-2xl md:rounded-3xl items-center justify-center p-8 text-center relative overflow-hidden group"
@@ -370,187 +339,256 @@ export default function page() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section
-          className="px-4 py-20 md:px-10 lg:px-40 flex justify-center bg-background-light dark:bg-background-dark"
-          id="testimonials"
-        >
-          <div className="w-full max-w-[1280px]">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-text-light dark:text-white mb-4">
-                Loved by Homeowners
-              </h2>
-              <p className="text-text-muted-light dark:text-text-muted-dark">
-                Join over 10,000 satisfied customers.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Testimonial 1 */}
-              <div className="bg-white dark:bg-[#1e282d] p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-[#2a3b45] flex flex-col h-full">
-                <div className="flex gap-1 text-yellow-400 mb-4">
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm ">
-                    <Star />
-                  </span>
-                </div>
-                <p className="text-text-light dark:text-gray-200 mb-6 flex-grow leading-relaxed">
-                  "Setting up the Homeasy system was incredibly simple. I had my
-                  lights and thermostat connected in under 20 minutes. The app
-                  is gorgeous!"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full bg-gray-300 bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDw_RSBbUigtdH_6iquej7jIQpFUIqHnoIPvaI9l2lLQsIXAEYf_7n-zLQHT_F11n_yVNA6vu6hfnHNVhhXOhkGS04q3j85YLJjVtKni7bpGJu207j_JQgClLZrvEGWzM4jE0cvDDyXAF4NLv1Z3jdu9jCRfHQsVDkwO9evlsiitb_hJpMDcePrLNFImU4gLvBSZCd59QYQK3sB4_r1pMPLys9kEmE9sAG65b22XfKkSyyXjMmuM2PrSTdIWwX15ppF7IdlUIFhwtJ-")',
-                    }}
-                  ></div>
-                  <div>
-                    <p className="text-sm font-bold text-text-light dark:text-white">
-                      Sarah Jenkins
-                    </p>
-                    <p className="text-xs text-text-muted-light dark:text-text-muted-dark">
-                      Verified Buyer
-                    </p>
-                  </div>
-                </div>
+        <section className="py-10  border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark/50">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <p className="text-center text-sm font-semibold leading-8 text-slate-500 dark:text-slate-400 mb-8">
+              INTEGRATES SEAMLESSLY WITH
+            </p>
+            <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 opacity-60 ">
+              <div className="col-span-2 max-h-12 w-full object-contain lg:col-span-1 flex justify-center items-center text-xl  gap-2 font-bold font-sans text-slate-800 dark:text-white">
+                <img src="./icon/google-nest.png" alt="" />
+                Nest
               </div>
-
-              {/* Testimonial 2 */}
-              <div className="bg-white dark:bg-[#1e282d] p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-[#2a3b45] flex flex-col h-full">
-                <div className="flex gap-1 text-yellow-400 mb-4">
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm ">
-                    <Star />
-                  </span>
-                </div>
-                <p className="text-text-light dark:text-gray-200 mb-6 flex-grow leading-relaxed">
-                  "The 'Away Mode' gives me such peace of mind when I travel.
-                  Being able to check my cameras from anywhere in the world is a
-                  game changer."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full bg-gray-300 bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDw_RSBbUigtdH_6iquej7jIQpFUIqHnoIPvaI9l2lLQsIXAEYf_7n-zLQHT_F11n_yVNA6vu6hfnHNVhhXOhkGS04q3j85YLJjVtKni7bpGJu207j_JQgClLZrvEGWzM4jE0cvDDyXAF4NLv1Z3jdu9jCRfHQsVDkwO9evlsiitb_hJpMDcePrLNFImU4gLvBSZCd59QYQK3sB4_r1pMPLys9kEmE9sAG65b22XfKkSyyXjMmuM2PrSTdIWwX15ppF7IdlUIFhwtJ-")',
-                    }}
-                  ></div>
-                  <div>
-                    <p className="text-sm font-bold text-text-light dark:text-white">
-                      Michael Chen
-                    </p>
-                    <p className="text-xs text-text-muted-light dark:text-text-muted-dark">
-                      Tech Enthusiast
-                    </p>
-                  </div>
-                </div>
+              <div className="col-span-2 max-h-12 w-full object-contain lg:col-span-1 flex justify-center items-center gap-2 text-xl font-bold font-sans text-slate-800 dark:text-white">
+                <img src="./icon/homekit.png" alt="" />
+                HomeKit
               </div>
-
-              {/* Testimonial 3 */}
-              <div className="bg-white dark:bg-[#1e282d] p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-[#2a3b45] flex flex-col h-full">
-                <div className="flex gap-1 text-yellow-400 mb-4">
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm">
-                    <Star />
-                  </span>
-                  <span className="material-symbols-outlined text-sm ">
-                    <Star />
-                  </span>
-                </div>
-                <p className="text-text-light dark:text-gray-200 mb-6 flex-grow leading-relaxed">
-                  "Great customer support and high-quality hardware. It feels
-                  premium but the price is actually very reasonable for what you
-                  get."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full bg-gray-300 bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDw_RSBbUigtdH_6iquej7jIQpFUIqHnoIPvaI9l2lLQsIXAEYf_7n-zLQHT_F11n_yVNA6vu6hfnHNVhhXOhkGS04q3j85YLJjVtKni7bpGJu207j_JQgClLZrvEGWzM4jE0cvDDyXAF4NLv1Z3jdu9jCRfHQsVDkwO9evlsiitb_hJpMDcePrLNFImU4gLvBSZCd59QYQK3sB4_r1pMPLys9kEmE9sAG65b22XfKkSyyXjMmuM2PrSTdIWwX15ppF7IdlUIFhwtJ-")',
-                    }}
-                  ></div>
-                  <div>
-                    <p className="text-sm font-bold text-text-light dark:text-white">
-                      Elena Rodriguez
-                    </p>
-                    <p className="text-xs text-text-muted-light dark:text-text-muted-dark">
-                      Interior Designer
-                    </p>
-                  </div>
-                </div>
+              <div className="col-span-2 max-h-12 w-full object-contain lg:col-span-1 flex justify-center items-center gap-2 text-xl font-bold font-sans text-slate-800 dark:text-white">
+                <img src="./icon/alexa.png" alt="" /> Alexa
+              </div>
+              <div className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1 flex justify-center items-center gap-2 text-xl font-bold font-sans text-slate-800 dark:text-white">
+                <img src="./icon/light-blub.png" alt="" /> Hue
+              </div>
+              <div className=" col-span-2  max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1 flex justify-center items-center gap-2 text-xl font-bold font-sans text-slate-800 dark:text-white">
+                <img src="./icon/wifi-smart.png" alt="" /> SmartThings
               </div>
             </div>
           </div>
         </section>
 
-        {/* Newsletter CTA */}
-        <section className="px-4 py-16 md:px-10 lg:px-40 flex justify-center border-t border-gray-200 dark:border-[#243b47]">
-          <div className="w-full max-w-[960px] bg-background-dark rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
-            <div className="relative z-10 flex flex-col items-center gap-6">
-              <div className="size-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                {/* <span className="material-symbols-outlined text-3xl">mail</span> */}
-                <Mail />
+        <div className=" bg-white py-16">
+          <div className="max-w-7xl mx-auto relative rounded-xl bg-slate-800 shadow-2xl overflow-hidden aspect-[16/9] md:aspect-[21/9] group border border-white/5">
+            <img
+              alt="App screenshot"
+              className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 ease-out"
+              height="1442"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVQnvC5NqPv-eGeymAS0ASNcGSW6UDs20GQKGaYTB73F8NFqIkBdSK7yblvUCa7XpYj8BT-FOegZ8d1OpNB2-qOK-XuXHGIUiB9S2rOAstgI-lvrR-cZYnnqOjSyFFaqbIiTapgtGAQ6_q66X-DlK0KAMJxwApnP_gUjl7MbbdTL-Ul8-bUxdZcyvbWAfKykBRD156IEaLtAdMSaVsrkMnEE83HAdAIV6daav1mZnecwzmy-hMVAtNnv4hkx1g0ferBDbp2hgeIn0F"
+              width="2432"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent"></div>
+            <div className="absolute top-8 left-8 hidden md:block animate-float-slow">
+              <div className="glass-panel p-4 rounded-2xl flex items-center gap-4">
+                <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                  <Leaf className="material-symbols-outlined" />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400 font-medium">
+                    Energy Savings
+                  </p>
+                  <p className="text-white font-bold text-lg">
+                    -24%{" "}
+                    <span className="text-xs font-normal text-slate-400">
+                      this month
+                    </span>
+                  </p>
+                </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Stay connected</h2>
-              <p className="max-w-lg opacity-90">
-                Join our newsletter to receive the latest updates, smart home
-                tips, and exclusive discounts.
+            </div>
+            <div className="absolute bottom-8 left-8 right-8 flex flex-col md:flex-row gap-6 md:items-end justify-between">
+              <div className="glass-panel p-6 rounded-2xl max-w-sm backdrop-blur-xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-yellow-500/20 rounded-lg text-yellow-400">
+                    <Sun className="material-symbols-outlined" />
+                  </div>
+                  <div>
+                    <span className="text-white font-bold block">
+                      Morning Scene
+                    </span>
+                    <span className="text-slate-400 text-xs">
+                      Active since 7:00 AM
+                    </span>
+                  </div>
+                </div>
+                <div className="flex gap-2 mt-4">
+                  <span className="text-xs px-2 py-1 bg-white/10 rounded text-slate-300 border border-white/5">
+                    Blinds 100%
+                  </span>
+                  <span className="text-xs px-2 py-1 bg-white/10 rounded text-slate-300 border border-white/5">
+                    Temp 72°F
+                  </span>
+                  <span className="text-xs px-2 py-1 bg-white/10 rounded text-slate-300 border border-white/5">
+                    Coffee ON
+                  </span>
+                </div>
+              </div>
+              <div className="hidden md:flex gap-4">
+                <div className="glass-panel p-4 rounded-2xl flex flex-col items-center min-w-[110px] hover:bg-white/10 transition-colors cursor-pointer group/card">
+                  <Lock className=" text-white mb-2 " />
+
+                  <span className="text-white text-xs font-medium">Front Door</span>
+                  <span className="text-emerald-400 text-[10px] mt-1">Locked</span>
+                </div>
+                <div className="glass-panel p-4 rounded-2xl flex flex-col items-center min-w-[110px] hover:bg-white/10 transition-colors cursor-pointer group/card">
+                  <Thermometer className=" text-white mb-2 " />
+
+                  <span className="text-white text-xs font-medium">
+                    Living Room
+                  </span>
+                  <span className="text-orange-400 text-[10px] mt-1">72°F</span>
+                </div>
+                <div className="glass-panel p-4 rounded-2xl flex flex-col items-center min-w-[110px] hover:bg-white/10 transition-colors cursor-pointer group/card">
+                  <Lightbulb className=" text-white mb-2" />
+
+                  <span className="text-white text-xs font-medium">Kitchen</span>
+                  <span className="text-yellow-400 text-[10px] mt-1">On (80%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       {/* Testimonials – Elevated Minimal Design */}
+<section
+  className="px-4 py-24 md:px-10 lg:px-40 flex justify-center bg-background-light dark:bg-background-dark"
+  id="testimonials"
+>
+  <div className="w-full max-w-[1400px]">
+    {/* Refined header with subtle emphasis */}
+    <div className="text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-text-light dark:text-white">
+        Real Stories from Real Homes
+      </h2>
+      <p className="mt-4 text-lg text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+        Thousands of homeowners trust us to make their lives easier, safer, and more connected.
+      </p>
+    </div>
+
+    {/* Clean, spacious grid */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+      {/* Testimonial 1 */}
+      <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
+        <div className="flex text-yellow-500 mb-6">
+          {[...Array(5)].map((_, i) => (
+            <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          ))}
+        </div>
+
+        <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
+          “Setting up the system was incredibly simple. I had my lights, thermostat, and locks connected in under 20 minutes. The app is intuitive and beautiful!”
+        </blockquote>
+
+        <div className="flex items-center gap-5 mt-10">
+          <div className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
+            style={{ backgroundImage: 'url("https://www.shutterstock.com/image-photo/happy-young-smiling-confident-professional-260nw-2286784643.jpg")' }}
+          />
+          <div>
+            <p className="font-semibold text-text-light dark:text-white">Sarah Jenkins</p>
+            <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Homeowner</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonial 2 */}
+      <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
+        <div className="flex text-yellow-500 mb-6">
+          {[...Array(5)].map((_, i) => (
+            <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          ))}
+        </div>
+
+        <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
+          “The 'Away Mode' gives me real peace of mind when traveling. Checking cameras and controlling everything from my phone anywhere in the world is a game-changer.”
+        </blockquote>
+
+        <div className="flex items-center gap-5 mt-10">
+          <div className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
+            style={{ backgroundImage: 'url("https://media.istockphoto.com/id/1316302354/photo/smiling-man-outdoors-in-the-city.jpg?s=612x612&w=0&k=20&c=FTUr2Eb2Eas9Dh2EhNIRnn3YP7Qp9CfE9hGcax6XzRM=") '}}
+          />
+          <div>
+            <p className="font-semibold text-text-light dark:text-white">Michael Chen</p>
+            <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Tech Enthusiast</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonial 3 */}
+      <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
+        <div className="flex text-yellow-500 mb-6">
+          {[...Array(5)].map((_, i) => (
+            <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+            </svg>
+          ))}
+        </div>
+
+        <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
+          “Excellent customer support and premium-quality hardware. It feels high-end, yet the pricing is very reasonable for everything you get.”
+        </blockquote>
+
+        <div className="flex items-center gap-5 mt-10">
+          <div className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
+            style={{ backgroundImage: 'url(https://www.shutterstock.com/image-photo/portrait-smiling-young-multiethnic-woman-260nw-2318383273.jpg)' }}
+          />
+          <div>
+            <p className="font-semibold text-text-light dark:text-white">Elena Rodriguez</p>
+            <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Interior Designer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <section className="px-4 py-16 md:px-10 lg:px-40 flex justify-center border-t border-gray-200 bg-white dark:border-[#243b47]">
+          <div className="w-full max-w-7xl bg-background-dark rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+            {/* Minimal decorative background – very subtle */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+            <div className="absolute top-0 left-0 w-80 h-80 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-80 h-80 bg-white/8 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+
+            <div className="relative z-10 flex flex-col items-center gap-8">
+              {/* Clean, larger icon without extra effects */}
+              <div className="size-16 bg-white/15 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <Mail className="size-8" />
+              </div>
+
+              {/* Minimal, benefit-focused headline */}
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Stay Connected
+              </h2>
+
+              {/* Short, clear description */}
+              <p className="max-w-xl text-lg leading-relaxed opacity-90">
+                Get the latest smart home tips, product updates, and exclusive
+                offers delivered to your inbox.
               </p>
 
-              <form className="flex w-full max-w-md flex-col sm:flex-row gap-3">
+              {/* Clean form – larger, more spacious */}
+              <form className="flex w-full max-w-md flex-col sm:flex-row gap-4">
                 <input
-                  className="flex-1 h-12 rounded-lg border-0 bg-white/10 px-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all outline-none backdrop-blur-sm"
-                  placeholder="Enter your email"
+                  className="flex-1 h-14 rounded-xl bg-white/10 px-6 text-white placeholder:text-white/50 focus:bg-white/20 focus:ring-2 focus:ring-white/40 transition-all outline-none backdrop-blur-sm"
+                  placeholder="Your email address"
                   required
                   type="email"
+                  aria-label="Email address"
                 />
                 <button
-                  className="h-12 px-6 rounded-lg bg-white text-primary font-bold hover:bg-gray-100 transition-colors"
+                  className="h-14 px-8 rounded-xl bg-white text-primary font-semibold hover:bg-gray-50 transition-colors"
                   type="submit"
                 >
                   Subscribe
                 </button>
               </form>
-            </div>
 
-            {/* Decorative Circles */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
-            <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+              {/* Newsletter */}
+              <p className="text-sm opacity-60">
+                No spam • Unsubscribe anytime
+              </p>
+            </div>
           </div>
         </section>
       </main>
@@ -584,7 +622,7 @@ export default function page() {
                   className="text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors"
                   href="#"
                 >
-                  <Facebook className="material-symbols-outlined "/>
+                  <Facebook className="material-symbols-outlined " />
                   {/* <i className="material-symbols-outlined">rss_feed</i> */}
                 </a>
                 <a
@@ -593,7 +631,7 @@ export default function page() {
                 >
                   {/* <i className="material-symbols-outlined">share</i>
                    */}
-                   <Share2 className="material-symbols-outlined "/>
+                  <Share2 className="material-symbols-outlined " />
                 </a>
               </div>
             </div>
