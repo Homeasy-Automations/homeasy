@@ -2,28 +2,27 @@
 
 import React from "react";
 import {
-   ShoppingCart,
+  ShoppingCart,
   Search,
   Heart as Favorite,
   Plus as AddShoppingCart,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-export default function shop() {
+
+export default function Shop() {
   return (
     <>
       <div className="relative flex h-auto min-h-screen w-full flex-col bg-white overflow-x-hidden font-['Space_Grotesk','Noto_Sans',sans-serif]">
         <div className="flex h-full grow flex-col">
-       
-
           {/* Main Content */}
           <div className="flex flex-1 justify-center py-8 px-4 md:px-10 bg-white">
             <div className="flex flex-col max-w-[1200px] flex-1">
               <div className="flex flex-col gap-4 mb-8">
-                <h1 className="text-black tracking-tight text-4xl md:text-5xl font-bold leading-tight">
+                <h1 className="text-gray-900 tracking-tight text-4xl md:text-5xl font-bold leading-tight">
                   Smart Home Products
                 </h1>
-                <p className="text-[#93b6c8] text-lg font-normal leading-normal max-w-2xl">
+                <p className="text-gray-500 text-lg font-normal leading-normal max-w-2xl">
                   Discover our comprehensive range of intelligent devices
                   designed to elevate your comfort, security, and lifestyle.
                 </p>
@@ -33,9 +32,9 @@ export default function shop() {
                 {/* Sidebar Filters */}
                 <aside className="w-full lg:w-64 shrink-0 flex flex-col gap-6">
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#93b6c8] text-[20px]" />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]" />
                     <input
-                      className="w-full h-10 pl-10 pr-4 bg-white border border-[#243b47] rounded-lg text-black placeholder-[#5a7a8a] text-sm focus:outline-none focus:border-[#19a2e6] focus:ring-1 focus:ring-[#19a2e6]"
+                      className="w-full h-10 pl-10 pr-4 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/10"
                       placeholder="Search products..."
                       type="text"
                     />
@@ -43,7 +42,7 @@ export default function shop() {
 
                   {/* Categories */}
                   <div className="flex flex-col gap-3">
-                    <h3 className="text-black font-bold text-sm uppercase tracking-wider">
+                    <h3 className="text-gray-900 font-bold text-sm uppercase tracking-wider">
                       Categories
                     </h3>
                     <div className="flex flex-col gap-1">
@@ -61,9 +60,9 @@ export default function shop() {
                           <input
                             type="checkbox"
                             defaultChecked={i === 0}
-                            className="form-checkbox rounded bg-white border-[#243b47] text-[#19a2e6] focus:ring-0 focus:ring-offset-0"
+                            className="form-checkbox rounded bg-white border-gray-200 text-blue-500 focus:ring-0 focus:ring-offset-0 checked:border-blue-500"
                           />
-                          <span className="text-[#93b6c8] group-hover:text-black text-sm transition-colors">
+                          <span className="text-gray-500 group-hover:text-gray-900 text-sm transition-colors">
                             {cat}
                           </span>
                         </label>
@@ -73,7 +72,7 @@ export default function shop() {
 
                   {/* Price Range */}
                   <div className="flex flex-col gap-3">
-                    <h3 className="text-black font-bold text-sm uppercase tracking-wider">
+                    <h3 className="text-gray-900 font-bold text-sm uppercase tracking-wider">
                       Price Range
                     </h3>
                     <div className="flex flex-col gap-1">
@@ -85,9 +84,9 @@ export default function shop() {
                           >
                             <input
                               type="checkbox"
-                              className="form-checkbox rounded bg-white border-[#243b47] text-[#19a2e6] focus:ring-0 focus:ring-offset-0"
+                              className="form-checkbox rounded bg-white border-gray-200 text-blue-500 focus:ring-0 focus:ring-offset-0 checked:border-blue-500"
                             />
-                            <span className="text-[#93b6c8] group-hover:text-black text-sm transition-colors">
+                            <span className="text-gray-500 group-hover:text-gray-900 text-sm transition-colors">
                               {range}
                             </span>
                           </label>
@@ -98,10 +97,10 @@ export default function shop() {
 
                   {/* Brands */}
                   <div className="flex flex-col gap-3">
-                    <h3 className="text-black font-bold text-sm uppercase tracking-wider">
+                    <h3 className="text-gray-900 font-bold text-sm uppercase tracking-wider">
                       Brands
                     </h3>
-                    <select className="w-full bg-white border border-[#243b47] text-[#93b6c8] text-sm rounded-lg focus:ring-[#19a2e6] focus:border-[#19a2e6] block p-2.5">
+                    <select className="w-full bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
                       <option>All Brands</option>
                       <option value="homeasy">Homeasy</option>
                       <option value="philips">Partner Brand A</option>
@@ -112,15 +111,15 @@ export default function shop() {
 
                 {/* Product Grid */}
                 <div className="flex-1 flex flex-col gap-6">
-                  <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#243b47]">
-                    <p className="text-black text-sm font-medium">
+                  <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-gray-200">
+                    <p className="text-gray-900 text-sm font-medium">
                       Showing{" "}
-                      <span className="text-[#19a2e6] font-bold">8</span>{" "}
+                      <span className="text-blue-600 font-bold">8</span>{" "}
                       results
                     </p>
                     <div className="flex items-center gap-2">
-                      <span className="text-[#93b6c8] text-sm">Sort by:</span>
-                      <select className="bg-transparent border-none text-black text-sm font-bold focus:ring-0 cursor-pointer p-0 pr-6">
+                      <span className="text-gray-500 text-sm">Sort by:</span>
+                      <select className="bg-transparent border-none text-gray-900 text-sm font-bold focus:ring-0 cursor-pointer p-0 pr-6">
                         <option>Featured</option>
                         <option>Price: Low to High</option>
                         <option>Price: High to Low</option>
@@ -189,7 +188,7 @@ export default function shop() {
                     ].map((product) => (
                       <div
                         key={product.name}
-                        className="group flex flex-col bg-[#19a2e6]/50 rounded-xl overflow-hidden border border-[#243b47] hover:border-[#19a2e6] transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#19a2e6]/10"
+                        className="group flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-blue-500/5"
                       >
                         <div className="relative w-full aspect-[4/3] overflow-hidden">
                           <div
@@ -199,40 +198,42 @@ export default function shop() {
                           {product.badge && (
                             <div
                               className={`absolute top-3 left-3 ${
-                                product.badgeColor || "bg-[#19a2e6]"
-                              } text-white text-xs font-bold px-2 py-1 rounded`}
+                                product.badgeColor || "bg-blue-500"
+                              } text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg"
+                            }
+                            `}
                             >
                               {product.badge}
                             </div>
                           )}
-                          <button className="absolute top-3 right-3 p-2 bg-black/40 hover:bg-[#19a2e6] rounded-full text-white backdrop-blur-sm transition-colors">
+                          <button className="absolute top-3 right-3 p-2 bg-black/20 hover:bg-blue-500 rounded-full text-white backdrop-blur-sm transition-all duration-200 opacity-0 group-hover:opacity-100">
                             <Favorite className="text-[18px]" />
                           </button>
                         </div>
                         <div className="p-4 flex flex-col gap-2 flex-1">
                           <div className="flex justify-between items-start">
-                            <h3 className="text-white text-lg font-bold leading-tight group-hover:text-[#19a2e6] transition-colors">
+                            <h3 className="text-gray-900 text-lg font-bold leading-tight group-hover:text-blue-600 transition-colors">
                               {product.name}
                             </h3>
                             <div className="flex flex-col items-end">
-                              <p className="text-white font-bold">
+                              <p className="text-gray-900 font-bold">
                                 {product.price}
                               </p>
                               {product.oldPrice && (
-                                <p className="text-[#5a7a8a] text-xs line-through">
+                                <p className="text-gray-500 text-xs line-through">
                                   {product.oldPrice}
                                 </p>
                               )}
                             </div>
                           </div>
-                          <p className="text-[#93b6c8] text-sm line-clamp-2">
+                          <p className="text-gray-600 text-sm line-clamp-2">
                             {product.desc}
                           </p>
                           <div className="mt-auto pt-4 flex gap-2">
-                            <button className="flex-1 bg-[#243b47] hover:bg-[#345565] text-white text-sm font-bold py-2 px-4 rounded-lg transition-colors">
+                            <button className="flex-1 bg-gray-900 hover:bg-gray-800 text-white text-sm font-bold py-2 px-4 rounded-lg transition-colors">
                               View Details
                             </button>
-                            <button className="p-2 bg-[#19a2e6] hover:bg-[#158bbd] text-white rounded-lg transition-colors flex items-center justify-center">
+                            <button className="p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors flex items-center justify-center shadow-sm hover:shadow-md hover:shadow-blue-500/10">
                               <AddShoppingCart className="text-[20px]" />
                             </button>
                           </div>
@@ -248,13 +249,13 @@ export default function shop() {
                       className="flex items-center gap-2"
                     >
                       <a
-                        className="flex items-center justify-center size-10 rounded-lg border border-[#243b47] bg-[#1a2c36] text-[#93b6c8] hover:bg-[#243b47] hover:text-white transition-colors"
+                        className="flex items-center justify-center size-10 rounded-lg border border-gray-200 bg-white text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors"
                         href="#"
                       >
                         <ChevronLeft className="text-[20px]" />
                       </a>
                       <a
-                        className="flex items-center justify-center size-10 rounded-lg bg-[#19a2e6] text-white font-bold shadow-lg shadow-[#19a2e6]/20"
+                        className="flex items-center justify-center size-10 rounded-lg bg-blue-500 text-white font-bold shadow-sm shadow-blue-500/10"
                         href="#"
                       >
                         1
@@ -262,23 +263,23 @@ export default function shop() {
                       {[2, 3].map((n) => (
                         <a
                           key={n}
-                          className="flex items-center justify-center size-10 rounded-lg border border-[#243b47] bg-[#1a2c36] text-[#93b6c8] hover:bg-[#243b47] hover:text-white transition-colors"
+                          className="flex items-center justify-center size-10 rounded-lg border border-gray-200 bg-white text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors"
                           href="#"
                         >
                           {n}
                         </a>
                       ))}
-                      <span className="flex items-center justify-center size-10 text-[#93b6c8]">
+                      <span className="flex items-center justify-center size-10 text-gray-400">
                         ...
                       </span>
                       <a
-                        className="flex items-center justify-center size-10 rounded-lg border border-[#243b47] bg-[#1a2c36] text-[#93b6c8] hover:bg-[#243b47] hover:text-white transition-colors"
+                        className="flex items-center justify-center size-10 rounded-lg border border-gray-200 bg-white text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors"
                         href="#"
                       >
                         10
                       </a>
                       <a
-                        className="flex items-center justify-center size-10 rounded-lg border border-[#243b47] bg-[#1a2c36] text-[#93b6c8] hover:bg-[#243b47] hover:text-white transition-colors"
+                        className="flex items-center justify-center size-10 rounded-lg border border-gray-200 bg-white text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors"
                         href="#"
                       >
                         <ChevronRight className="text-[20px]" />

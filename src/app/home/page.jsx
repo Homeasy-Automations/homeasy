@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   ArrowRight,
@@ -20,6 +21,7 @@ import {
   Lock,
 } from "lucide-react";
 import Header from "@/components/header";
+import { motion } from "framer-motion";
 
 const products = [
   {
@@ -51,12 +53,11 @@ const products = [
 export default function page() {
   return (
     <section className="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display antialiased transition-colors duration-200">
-      
-      <Header/>
+      <Header />
 
       <main className="grow">
         {/* Hero Section */}
-        <section className="relative px-4 py-8 md:px-10 md:py-12 lg:px-40 flex justify-center">
+        <section className="relative px-4 py-8 md:px-10 md:py-12 lg:px-40 flex justify-center overflow-hidden">
           <div className="w-full max-w-7xl">
             <div className="@container">
               <div
@@ -67,31 +68,110 @@ export default function page() {
                     'linear-gradient(rgba(17, 28, 33, 0.4) 0%, rgba(17, 28, 33, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVQnvC5NqPv-eGeymAS0ASNcGSW6UDs20GQKGaYTB73F8NFqIkBdSK7yblvUCa7XpYj8BT-FOegZ8d1OpNB2-qOK-XuXHGIUiB9S2rOAstgI-lvrR-cZYnnqOjSyFFaqbIiTapgtGAQ6_q66X-DlK0KAMJxwApnP_gUjl7MbbdTL-Ul8-bUxdZcyvbWAfKykBRD156IEaLtAdMSaVsrkMnEE83HAdAIV6daav1mZnecwzmy-hMVAtNnv4hkx1g0ferBDbp2hgeIn0F")',
                 }}
               >
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700"></div>
-                <div className="relative z-10 flex flex-col gap-4 max-w-3xl mx-auto">
-                  <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-bold uppercase tracking-wider w-fit mx-auto">
+                {/* Enhanced Overlay with Parallax Effect */}
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-700 ease-out"></div>
+
+                {/* Subtle Particle Overlay for Ambient Glow (using CSS-only for performance) */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+                  <div className="absolute top-10 left-10 w-2 h-2 bg-cyan-300 rounded-full blur-xl animate-ping delay-75"></div>
+                  <div className="absolute top-20 right-20 w-3 h-3 bg-purple-400 rounded-full blur-2xl animate-pulse delay-150"></div>
+                  <div className="absolute bottom-20 left-1/4 w-1 h-1 bg-blue-500 rounded-full blur-lg animate-bounce delay-300"></div>
+                </div>
+
+                <div className="relative z-10 flex flex-col gap-6 max-w-3xl mx-auto">
+                  {/* Animated Badge with Entrance Delay */}
+                  <motion.span
+                    className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-bold uppercase tracking-wider w-fit mx-auto"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                  >
                     Smart Living 2.0
-                  </span>
-                  <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight drop-shadow-sm">
+                  </motion.span>
+
+                  {/* Enhanced H1 with Letter Spacing Animation */}
+                  <motion.h1
+                    className="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight drop-shadow-lg"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+                  >
                     Your Home,{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-purple-300 animate-gradient-flow">
                       Reimagined.
                     </span>
-                  </h1>
-                  <h2 className="text-gray-200 text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
+                  </motion.h1>
+
+                  {/* Improved H2 with Better Typography and Subtle Glow */}
+                  <motion.h2
+                    className="text-gray-100 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto drop-shadow-md"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
+                  >
                     Experience intelligent living made simple. Control lighting,
                     security, and climate from one beautiful ecosystem.
-                  </h2>
+                    Seamlessly integrate with your favorite devices for a truly
+                    connected life.
+                  </motion.h2>
                 </div>
-                <div className="relative z-10 flex flex-col sm:flex-row gap-4 mt-4">
-                  <button className="flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold shadow-xl shadow-primary/30 transition-transform hover:scale-105">
-                    Shop Now
-                  </button>
-                  <button className="flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/30 text-white text-base font-bold transition-transform hover:scale-105">
-                    <CirclePlay className="material-symbols-outlined mr-2 text-xl" />
+
+                {/* Enhanced CTA Buttons with Improved Hover and Focus States */}
+                <motion.div
+                  className="relative z-10 flex flex-col sm:flex-row gap-4 mt-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                >
+                  <motion.button
+                    className="group flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary/90 focus:bg-primary/95 text-white text-base font-bold shadow-xl shadow-primary/30 transition-all duration-300 ease-out focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-transparent relative overflow-hidden"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    whileFocus={{ scale: 1.02 }}
+                  >
+                    <span className="relative z-10 flex items-center">
+                      Shop Now
+                      <motion.span
+                        className="ml-2 opacity-0 transition-opacity duration-300"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        →
+                      </motion.span>
+                    </span>
+                    <motion.span
+                      className="absolute inset-0 bg-primary/20 -translate-x-full w-full h-full"
+                      initial={{ translateX: "-100%" }}
+                      whileHover={{ translateX: "100%" }}
+                      transition={{ duration: 0.7, ease: "easeOut" }}
+                    />
+                  </motion.button>
+
+                  <motion.button
+                    className="group flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-white/10 backdrop-blur-md hover:bg-white/20 focus:bg-white/25 border border-white/30 text-white text-base font-bold transition-all duration-300 ease-out focus:outline-none focus:ring-4 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-transparent"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    whileFocus={{ scale: 1.02 }}
+                  >
+                    <motion.span
+                      className="flex items-center mr-2 text-xl transition-transform duration-300"
+                      initial={{ rotate: 0 }}
+                      whileHover={{ rotate: 12 }}
+                      aria-hidden="true"
+                    >
+                      <CirclePlay className="material-symbols-outlined" />
+                    </motion.span>
                     Watch Demo
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
+
+                {/* Accessibility: Skip link for screen readers */}
+                <a
+                  href="#main-content"
+                  className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-1/2 focus:-translate-x-1/2 focus:bg-white focus:px-4 focus:py-2 focus:rounded focus:text-black focus:z-50"
+                >
+                  Skip to main content
+                </a>
               </div>
             </div>
           </div>
@@ -425,8 +505,12 @@ export default function page() {
                 <div className="glass-panel p-4 rounded-2xl flex flex-col items-center min-w-[110px] hover:bg-white/10 transition-colors cursor-pointer group/card">
                   <Lock className=" text-white mb-2 " />
 
-                  <span className="text-white text-xs font-medium">Front Door</span>
-                  <span className="text-emerald-400 text-[10px] mt-1">Locked</span>
+                  <span className="text-white text-xs font-medium">
+                    Front Door
+                  </span>
+                  <span className="text-emerald-400 text-[10px] mt-1">
+                    Locked
+                  </span>
                 </div>
                 <div className="glass-panel p-4 rounded-2xl flex flex-col items-center min-w-[110px] hover:bg-white/10 transition-colors cursor-pointer group/card">
                   <Thermometer className=" text-white mb-2 " />
@@ -439,109 +523,156 @@ export default function page() {
                 <div className="glass-panel p-4 rounded-2xl flex flex-col items-center min-w-[110px] hover:bg-white/10 transition-colors cursor-pointer group/card">
                   <Lightbulb className=" text-white mb-2" />
 
-                  <span className="text-white text-xs font-medium">Kitchen</span>
-                  <span className="text-yellow-400 text-[10px] mt-1">On (80%)</span>
+                  <span className="text-white text-xs font-medium">
+                    Kitchen
+                  </span>
+                  <span className="text-yellow-400 text-[10px] mt-1">
+                    On (80%)
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-       {/* Testimonials – Elevated Minimal Design */}
-<section
-  className="px-4 py-24 md:px-10 lg:px-40 flex justify-center bg-background-light dark:bg-background-dark"
-  id="testimonials"
->
-  <div className="w-full max-w-[1400px]">
-    {/* Refined header with subtle emphasis */}
-    <div className="text-center mb-20">
-      <h2 className="text-4xl md:text-5xl font-bold text-text-light dark:text-white">
-        Real Stories from Real Homes
-      </h2>
-      <p className="mt-4 text-lg text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
-        Thousands of homeowners trust us to make their lives easier, safer, and more connected.
-      </p>
-    </div>
+        {/* Testimonials – Elevated Minimal Design */}
+        <section
+          className="px-4 py-24 md:px-10 lg:px-40 flex justify-center bg-background-light dark:bg-background-dark"
+          id="testimonials"
+        >
+          <div className="w-full max-w-[1400px]">
+            {/* Refined header with subtle emphasis */}
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-text-light dark:text-white">
+                Real Stories from Real Homes
+              </h2>
+              <p className="mt-4 text-lg text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto">
+                Thousands of homeowners trust us to make their lives easier,
+                safer, and more connected.
+              </p>
+            </div>
 
-    {/* Clean, spacious grid */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
-      {/* Testimonial 1 */}
-      <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
-        <div className="flex text-yellow-500 mb-6">
-          {[...Array(5)].map((_, i) => (
-            <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-            </svg>
-          ))}
-        </div>
+            {/* Clean, spacious grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+              {/* Testimonial 1 */}
+              <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
+                <div className="flex text-yellow-500 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
 
-        <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
-          “Setting up the system was incredibly simple. I had my lights, thermostat, and locks connected in under 20 minutes. The app is intuitive and beautiful!”
-        </blockquote>
+                <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
+                  “Setting up the system was incredibly simple. I had my lights,
+                  thermostat, and locks connected in under 20 minutes. The app
+                  is intuitive and beautiful!”
+                </blockquote>
 
-        <div className="flex items-center gap-5 mt-10">
-          <div className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
-            style={{ backgroundImage: 'url("https://www.shutterstock.com/image-photo/happy-young-smiling-confident-professional-260nw-2286784643.jpg")' }}
-          />
-          <div>
-            <p className="font-semibold text-text-light dark:text-white">Sarah Jenkins</p>
-            <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Homeowner</p>
+                <div className="flex items-center gap-5 mt-10">
+                  <div
+                    className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
+                    style={{
+                      backgroundImage:
+                        'url("https://www.shutterstock.com/image-photo/happy-young-smiling-confident-professional-260nw-2286784643.jpg")',
+                    }}
+                  />
+                  <div>
+                    <p className="font-semibold text-text-light dark:text-white">
+                      Sarah Jenkins
+                    </p>
+                    <p className="text-sm text-text-muted-light dark:text-text-muted-dark">
+                      Homeowner
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
+                <div className="flex text-yellow-500 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+
+                <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
+                  “The 'Away Mode' gives me real peace of mind when traveling.
+                  Checking cameras and controlling everything from my phone
+                  anywhere in the world is a game-changer.”
+                </blockquote>
+
+                <div className="flex items-center gap-5 mt-10">
+                  <div
+                    className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
+                    style={{
+                      backgroundImage:
+                        'url("https://media.istockphoto.com/id/1316302354/photo/smiling-man-outdoors-in-the-city.jpg?s=612x612&w=0&k=20&c=FTUr2Eb2Eas9Dh2EhNIRnn3YP7Qp9CfE9hGcax6XzRM=") ',
+                    }}
+                  />
+                  <div>
+                    <p className="font-semibold text-text-light dark:text-white">
+                      Michael Chen
+                    </p>
+                    <p className="text-sm text-text-muted-light dark:text-text-muted-dark">
+                      Tech Enthusiast
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
+                <div className="flex text-yellow-500 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+
+                <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
+                  “Excellent customer support and premium-quality hardware. It
+                  feels high-end, yet the pricing is very reasonable for
+                  everything you get.”
+                </blockquote>
+
+                <div className="flex items-center gap-5 mt-10">
+                  <div
+                    className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
+                    style={{
+                      backgroundImage:
+                        "url(https://www.shutterstock.com/image-photo/portrait-smiling-young-multiethnic-woman-260nw-2318383273.jpg)",
+                    }}
+                  />
+                  <div>
+                    <p className="font-semibold text-text-light dark:text-white">
+                      Elena Rodriguez
+                    </p>
+                    <p className="text-sm text-text-muted-light dark:text-text-muted-dark">
+                      Interior Designer
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Testimonial 2 */}
-      <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
-        <div className="flex text-yellow-500 mb-6">
-          {[...Array(5)].map((_, i) => (
-            <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-            </svg>
-          ))}
-        </div>
-
-        <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
-          “The 'Away Mode' gives me real peace of mind when traveling. Checking cameras and controlling everything from my phone anywhere in the world is a game-changer.”
-        </blockquote>
-
-        <div className="flex items-center gap-5 mt-10">
-          <div className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
-            style={{ backgroundImage: 'url("https://media.istockphoto.com/id/1316302354/photo/smiling-man-outdoors-in-the-city.jpg?s=612x612&w=0&k=20&c=FTUr2Eb2Eas9Dh2EhNIRnn3YP7Qp9CfE9hGcax6XzRM=") '}}
-          />
-          <div>
-            <p className="font-semibold text-text-light dark:text-white">Michael Chen</p>
-            <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Tech Enthusiast</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonial 3 */}
-      <div className="bg-white dark:bg-[#1e282d] rounded-3xl p-10 lg:p-12 border border-gray-100 dark:border-[#2a3b45] flex flex-col">
-        <div className="flex text-yellow-500 mb-6">
-          {[...Array(5)].map((_, i) => (
-            <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-            </svg>
-          ))}
-        </div>
-
-        <blockquote className="text-lg lg:text-xl leading-relaxed text-text-light dark:text-gray-100 flex-grow">
-          “Excellent customer support and premium-quality hardware. It feels high-end, yet the pricing is very reasonable for everything you get.”
-        </blockquote>
-
-        <div className="flex items-center gap-5 mt-10">
-          <div className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-white dark:ring-[#1e282d] shadow-md"
-            style={{ backgroundImage: 'url(https://www.shutterstock.com/image-photo/portrait-smiling-young-multiethnic-woman-260nw-2318383273.jpg)' }}
-          />
-          <div>
-            <p className="font-semibold text-text-light dark:text-white">Elena Rodriguez</p>
-            <p className="text-sm text-text-muted-light dark:text-text-muted-dark">Interior Designer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
         <section className="px-4 py-16 md:px-10 lg:px-40 flex justify-center border-t border-gray-200 bg-white dark:border-[#243b47]">
           <div className="w-full max-w-7xl bg-background-dark rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
