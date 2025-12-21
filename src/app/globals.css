@@ -9,33 +9,35 @@ html {
 @theme {
   /* Fonts */
   --font-display: "Space Grotesk", sans-serif;
-  --font-body:     "Noto Sans",    sans-serif;
+  --font-body: "Noto Sans", sans-serif;
 
   /* Border Radius (exactly like your Tailwind extend) */
-  --radius:        0.25rem;  /* DEFAULT */
-  --radius-lg:     0.5rem;
-  --radius-xl:     0.75rem;
-  --radius-2xl:    1rem;
-  --radius-full:   9999px;
+  --radius: 0.25rem;
+  /* DEFAULT */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
 
   /* Colors (kept your original Homeasy palette + a few improvements) */
-  --color-primary:               #19a1e6;
+  /* --color-primary: #19a1e6; */
+  --color-primary: #00FFC2;
 
-  --color-background-light:      #f6f7f8;
-    --color-background-dark:       #111c21;
+  --color-background-light: #f6f7f8;
+  --color-background-dark: #111c21;
 
-  --color-surface-light:         #ffffff;
-  --color-surface-dark:          #1e282d;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #1e282d;
 
-  --color-text-light:            #111c22;
-  --color-text-dark:             #ffffff;
+  --color-text-light: #111c22;
+  --color-text-dark: #ffffff;
 
-  --color-text-muted-light:      #64748b;
-  --color-text-muted-dark:       #93b6c8;
+  --color-text-muted-light: #64748b;
+  --color-text-muted-dark: #93b6c8;
 
   /* Gradient text (extra bonus you had in the hero) */
-  --color-text-gradient-start:   #19a1e6;
-  --color-text-gradient-end:     #67e8f9;
+  --color-text-gradient-start: #19a1e6;
+  --color-text-gradient-end: #67e8f9;
 }
 
 .text-gradient {
